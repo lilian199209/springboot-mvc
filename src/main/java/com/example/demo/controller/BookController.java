@@ -42,21 +42,21 @@ import org.springframework.web.bind.annotation.RestController;
  * --------------------------------------------
  * 📌 設計重點：
  *
- * 1️⃣ 使用 ResponseEntity
+ * 1️. 使用 ResponseEntity
  *   - 可控制 HTTP Status (200, 400, 404...)
  *
- * 2️⃣ 使用 ApiResponse
+ * 2️. 使用 ApiResponse
  *   - 統一 JSON 回傳格式
  *   {
  *     "message": "...",
  *     "data": ...
  *   }
  *
- * 3️⃣ 例外處理 (Exception Handling)
+ * 3️. 例外處理 (Exception Handling)
  *   - 捕捉 BookException
  *   - 避免系統直接 crash
  *
- * 4️⃣ RESTful 設計
+ * 4️. RESTful 設計
  *   - 使用 HTTP Method 表達行為
  *   - URL 表示資源 (book)
  *
