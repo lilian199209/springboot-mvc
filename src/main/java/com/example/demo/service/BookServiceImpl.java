@@ -15,7 +15,7 @@ import com.example.demo.repository.BookRepository;
 public class BookServiceImpl implements BookService {
 	
 	@Autowired // 自動綁定
-	@Qualifier("BookRepositoryImpl") // 指定實現類
+	@Qualifier("bookRepositoryImpl") // 指定實現類
 	private BookRepository bookRepository;
 
 	@Override
@@ -73,7 +73,7 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public void deleteBook(Integer id) throws BookException {
 		if(!bookRepository.deleteBook(id)) {
-			throw new BookException("修改失敗, id: " + id);
+			throw new BookException("刪除失敗, id: " + id);
 		}
 		
 	}

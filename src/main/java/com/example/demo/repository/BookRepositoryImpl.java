@@ -52,11 +52,18 @@ public class BookRepositoryImpl implements BookRepository {
 		// 得到要修改的書
 		Book orginalBook = optBook.get();
 		// 更新欄位資料
-		orginalBook.setAmount(book.getAmount());
-		orginalBook.setName(book.getName());
-		orginalBook.setPrice(book.getPrice());
-		orginalBook.setPub(book.getPub());
-		
+		if(book.getAmount() != null) {
+			orginalBook.setAmount(book.getAmount());
+		}
+		if(book.getName() != null) {
+			orginalBook.setName(book.getName());
+		}
+		if(book.getPrice() != null) {
+			orginalBook.setPrice(book.getPrice());
+		}
+		if(book.getPub() != null) {
+			orginalBook.setPub(book.getPub());
+		}
 		return true;
 	}
 
