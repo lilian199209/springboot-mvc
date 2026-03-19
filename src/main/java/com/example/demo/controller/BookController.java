@@ -116,35 +116,47 @@ public class BookController {
 	// GET /book/{id} 查詢單一書籍
 	@GetMapping("/{id}")
 	public ResponseEntity<ApiResponse<Book>> getBookById(@PathVariable Integer id) {
-		try {
-			Book book = bookService.getBookById(id);
-			return ResponseEntity.ok(ApiResponse.success("查詢成功", book));
-		} catch (BookException e) {
-			return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
-		}
+		Book book = bookService.getBookById(id);
+		return ResponseEntity.ok(ApiResponse.success("查詢成功", book));
 	}
+//	public ResponseEntity<ApiResponse<Book>> getBookById(@PathVariable Integer id) {
+//		try {
+//			Book book = bookService.getBookById(id);
+//			return ResponseEntity.ok(ApiResponse.success("查詢成功", book));
+//		} catch (BookException e) {
+//			return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
+//		}
+//	}
 	
 	// POST /book 新增書籍
 	@PostMapping
 	public ResponseEntity<ApiResponse<Book>> addBook(@RequestBody Book book) {
-		try {
-			bookService.addBook(book);
-			return ResponseEntity.ok(ApiResponse.success("新增成功", book));
-		} catch (BookException e) {
-			return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
-		}
+		bookService.addBook(book);
+		return ResponseEntity.ok(ApiResponse.success("新增成功", book));
 	}
+//	public ResponseEntity<ApiResponse<Book>> addBook(@RequestBody Book book) {
+//		try {
+//			bookService.addBook(book);
+//			return ResponseEntity.ok(ApiResponse.success("新增成功", book));
+//		} catch (BookException e) {
+//			return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
+//		}
+//	}
 	
 	// DELETE /book/{id} 刪除書籍
 	@DeleteMapping("/{id}")
 	public ResponseEntity<ApiResponse<String>> deleteBook(@PathVariable Integer id) {
-		try {
-			bookService.deleteBook(id);
-			return ResponseEntity.ok(ApiResponse.success("刪除成功", "id=" + id));
-		} catch (BookException e) {
-			return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
-		}
+		bookService.deleteBook(id);
+		return ResponseEntity.ok(ApiResponse.success("刪除成功", "id=" + id));
 	}
+//	public ResponseEntity<ApiResponse<String>> deleteBook(@PathVariable Integer id) {
+//		try {
+//			bookService.deleteBook(id);
+//			return ResponseEntity.ok(ApiResponse.success("刪除成功", "id=" + id));
+//		} catch (BookException e) {
+//			return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));
+//		}
+//	}
 	
 	// PUT /book/{id} 更新整本書 (完整更新)
 	@PutMapping("/{id}")

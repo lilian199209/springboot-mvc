@@ -58,12 +58,11 @@ public class BookRepositoryImpl implements BookRepository {
 		if(book.getName() != null) {
 			orginalBook.setName(book.getName());
 		}
-		if(book.getPrice() != null) {
-			orginalBook.setPrice(book.getPrice());
-		}
-		if(book.getPub() != null) {
-			orginalBook.setPub(book.getPub());
-		}
+		// java 8 以前寫法
+		if(book.getPrice() != null) orginalBook.setPrice(book.getPrice());
+		// java 8 以後寫法
+		Optional.ofNullable(book.getPub()).ifPresent(orginalBook::setPub);
+		
 		return true;
 	}
 
