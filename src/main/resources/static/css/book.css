@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+/* ------------------------------------- */
+/* 第 1 階段原有：基本頁面樣式 */
+/* ------------------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Microsoft JhengHei", sans-serif;
+    background-color: #f5f7fb;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.message-box {
+    min-height: 48px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.message-box.success {
+    background-color: #e6f7ea;
+    color: #18794e;
+}
+
+.message-box.error {
+    background-color: #fdeaea;
+    color: #c0392b;
+}
+
+.message-box.info {
+    background-color: #eaf3ff;
+    color: #1f5fae;
+}
+
+/* ------------------------------------- */
+/* 第 2 階段原有：表單樣式 */
+/* ------------------------------------- */
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    gap: 16px;
+}
+
+.form-row label {
+    width: 100px;
+    font-weight: bold;
+}
+
+.form-row input[type="text"],
+.form-row input[type="number"] {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ccd3db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+/* ------------------------------------- */
+/* 第 3 階段原有：readonly + disabled 樣式 */
+/* ------------------------------------- */
+input[readonly] {
+    background-color: #f1f5f9;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.button-group,
+.search-bar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.search-bar input {
+    flex: 1;
+    min-width: 220px;
+    padding: 10px 12px;
+    border: 1px solid #ccd3db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #2563eb;
+    color: white;
+}
+
+button.secondary {
+    background-color: #64748b;
+}
+
+/* ------------------------------------- */
+/* 第 4 階段新增：danger 樣式 */
+/* 用於刪除按鈕 */
+/* ------------------------------------- */
+button.danger {
+    background-color: #dc2626;
+}
+
+button:disabled {
+    background-color: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+.result-box {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    padding: 16px;
+    border-radius: 10px;
+    min-height: 80px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+thead {
+    background-color: #1e293b;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.empty-row {
+    color: #888;
+    padding: 20px;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Book SPA</title>
+	<link rel="stylesheet" href="/css/book.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Book 管理系統 SPA(Single Page Application)</h1>
+		<p class="subtitle"></p>
+		
+		<!-- 顯示訊息的空間 -->
+		<div id="messageBox" class="message-box info">顯示訊息...</div>
+		
+		<!-- 新增表單 -->
+		<section class="card">
+			<h2>新增書籍</h2>
+			<form id="bookForm">
+				<div class="form-row">
+					<label for="bookName">書名</label>
+					<input type="text" id="bookName" placeholder="例如: JAVA入門">
+				</div>
+				
+				<div class="form-row">
+					<label for="bookPrice">價格</label>
+					<input type="number" step="0.5" id="bookPrice" placeholder="例如: 550">
+				</div>
+				
+				<div class="form-row">
+					<label for="bookAmount">數量</label>
+					<input type="number" id="bookAmount" placeholder="例如: 20">
+				</div>
+				
+				<div class="form-row checkbox-row">
+					<label for="bookPub">是否出刊</label>
+					<input type="checkbox" id="bookPub">
+				</div>
+				
+				<div class="button-group">
+					<button type="button" id="addBtn">新增書籍</button>
+					<button type="reset" id="resetBtn" class="secondary">清空表單</button>
+				</div>
+			</form>
+		</section>
+		
+		<!-- 查詢功能 -->
+		<section class="card">
+			<h2>查詢功能</h2>
+			<div class="search-bar">
+				<input type="number" id="searchId" placeholder="請輸入要查詢的書籍 ID" />
+				<button type="button" id="findOneBtn">查詢單筆</button>
+				<button type="button" id="findAllBtn">查詢多筆</button>
+			</div>
+		</section>
+		
+		<!-- 單筆查詢結果(以json呈現) -->
+		<section class="card">
+			<h2>查單筆查詢結果</h2>
+			<pre id="singleResult" class="result-box">尚未查詢資料</pre>
+		</section>
+		
+		<!-- 全部查詢結果(以table呈現) -->
+		<section class="card">
+			<h2>全部書籍列表</h2>
+			<div class="table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>書名</th>
+							<th>價格</th>
+							<th>數量</th>
+							<th>出刊</th>
+						</tr>
+					</thead>
+					<tbody id="bookTableBody">
+						<tr>
+							<td colspan="5" class="empty-now">目前沒有資料</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+		
+		
+	</div>
+	
+	<!-- 引入book.js -->
+	<script src="/js/book.js"></script>
+</body>
+</html>
