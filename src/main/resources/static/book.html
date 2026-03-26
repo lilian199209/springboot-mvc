@@ -13,7 +13,46 @@
 		<!-- 顯示訊息的空間 -->
 		<div id="messageBox" class="message-box info">顯示訊息...</div>
 		
+		<!-- 書籍表單 -->
+		<section class="card">
+			<h2>書籍表單</h2>
+			<form id="bookForm">
+				<!-- 修改時才會使用的ID欄位 -->
+				<div class="form-row">
+					<label for="bookId">ID</label>
+					<input type="text" id="bookId" placeholder="修改時會自動帶入且不可修改" readonly="readonly">
+				</div>
+				
+				<div class="form-row">
+					<label for="bookName">書名</label>
+					<input type="text" id="bookName" placeholder="例如: JAVA入門">
+				</div>
+				
+				<div class="form-row">
+					<label for="bookPrice">價格</label>
+					<input type="number" step="0.5" id="bookPrice" placeholder="例如: 550">
+				</div>
+				
+				<div class="form-row">
+					<label for="bookAmount">數量</label>
+					<input type="number" id="bookAmount" placeholder="例如: 20">
+				</div>
+				
+				<div class="form-row checkbox-row">
+					<label for="bookPub">是否出刊</label>
+					<input type="checkbox" id="bookPub">
+				</div>
+				
+				<div class="button-group">
+					<button type="button" id="addBtn">新增書籍</button>
+					<button type="button" id="updateBtn">修改書籍</button>
+					<button type="reset" id="resetBtn" class="secondary">清空表單</button>
+				</div>
+			</form>
+		</section>
+		
 		<!-- 新增表單 -->
+		<!--
 		<section class="card">
 			<h2>新增書籍</h2>
 			<form id="bookForm">
@@ -43,6 +82,7 @@
 				</div>
 			</form>
 		</section>
+		-->
 		
 		<!-- 查詢功能 -->
 		<section class="card">
@@ -72,11 +112,12 @@
 							<th>價格</th>
 							<th>數量</th>
 							<th>出刊</th>
+							<th>操作</th>
 						</tr>
 					</thead>
 					<tbody id="bookTableBody">
 						<tr>
-							<td colspan="5" class="empty-now">目前沒有資料</td>
+							<td colspan="6" class="empty-now">目前沒有資料</td>
 						</tr>
 					</tbody>
 				</table>
